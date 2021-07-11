@@ -13,18 +13,19 @@ public class RaycastMove : MonoBehaviour
     private Mover _pizzaMover;
     // debugging
     [SerializeField] bool showDebug;
+    [SerializeField] float height;
     [SerializeField] Vector2 vecStart;
     [SerializeField] float xSpace,zSpace;
     [SerializeField] int columnLength,rowLength;
     
     private Camera _cam;
     private static Transform _pizza;
+    [HideInInspector]public Transform p;
     
     [InitializeOnLoadMethod]
     static void FindPizza()
     {
         _pizza = GameObject.Find("Pizza").transform;
-        Debug.Log(_pizza.gameObject);
     }
     
     void Start()
@@ -74,20 +75,21 @@ public class RaycastMove : MonoBehaviour
         
         for (int i = 0; i < columnLength * rowLength; i++)
         {
-            Gizmos.DrawCube(new Vector3(vecStart.x + xSpace * (i %columnLength),0,vecStart .y + zSpace * (i / columnLength)),Vector3.one);
+            Gizmos.DrawCube(new Vector3(vecStart.x + xSpace * (i %columnLength),0 + height,vecStart .y + zSpace * (i / columnLength)),Vector3.one);
         }
     }
 
     [ContextMenu("Create Grid")]
-    private void CreateGrid()
+    public void CreateGrid()
     {
         GameObject parent = new GameObject("GridParent");
+        p = parent.transform;
         int j = 1;
         for (int i = 0; i < columnLength * rowLength; i++)
         {
             GameObject gridPos = new GameObject();
             gridPos.name = $"Grid Position : {j}";
-            gridPos.transform.position = new Vector3(vecStart.x + xSpace * (i %columnLength),0,vecStart .y + zSpace * (i / columnLength));
+            gridPos.transform.position = new Vector3(vecStart.x + xSpace * (i %columnLength),0 + height,vecStart .y + zSpace * (i / columnLength));
             gridPos.tag = "GridObject";
             gridPos.transform.parent = parent.transform;
             j++;

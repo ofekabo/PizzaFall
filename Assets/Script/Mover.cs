@@ -10,8 +10,14 @@ public class Mover : MonoBehaviour
     [SerializeField] float speed;
     private Rigidbody _rb;
     [HideInInspector] public bool gotHit;
-    
+
     [InitializeOnLoadMethod]
+    private void CompEditor()
+    {
+        _rb = GetComponent<Rigidbody>();
+        _rb.useGravity = false;
+        gotHit = false;
+    }
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
