@@ -17,6 +17,7 @@ public class RaycastMove : MonoBehaviour
     [SerializeField] Vector2 vecStart;
     [SerializeField] float xSpace,zSpace;
     [SerializeField] int columnLength,rowLength;
+    List<Transform> _gridPos = new List<Transform>();
     
     private Camera _cam;
     private static Transform _pizza;
@@ -72,10 +73,18 @@ public class RaycastMove : MonoBehaviour
         if(!showDebug) { return; }
         
         Gizmos.color = Color.red;
-        
-        for (int i = 0; i < columnLength * rowLength; i++)
+        if (!Application.isPlaying)
         {
-            Gizmos.DrawCube(new Vector3(vecStart.x + xSpace * (i %columnLength),0 + height,vecStart .y + zSpace * (i / columnLength)),Vector3.one);
+            for (int i = 0; i < columnLength * rowLength; i++)
+            {
+                Gizmos.DrawCube(new Vector3(vecStart.x + xSpace * (i %columnLength),0 + height,vecStart .y + zSpace * (i / columnLength)),Vector3.one);
+            }
+        }
+
+        Gizmos.color = Color.yellow;
+        foreach (var pos in  _gridPos)
+        {
+            Gizmos.DrawCube(pos.position,Vector3.one);
         }
     }
 
@@ -87,8 +96,10 @@ public class RaycastMove : MonoBehaviour
         int j = 1;
         for (int i = 0; i < columnLength * rowLength; i++)
         {
+           
             GameObject gridPos = new GameObject();
             gridPos.name = $"Grid Position : {j}";
+            _gridPos.Add(gridPos.transform);
             gridPos.transform.position = new Vector3(vecStart.x + xSpace * (i %columnLength),0 + height,vecStart .y + zSpace * (i / columnLength));
             gridPos.tag = "GridObject";
             gridPos.transform.parent = parent.transform;
