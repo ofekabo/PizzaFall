@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class RaycastMove : MonoBehaviour
 {
-    [SerializeField] Transform pizza;
+  
     [SerializeField] LayerMask ignoreLayers = new LayerMask();
     
     private Mover _pizzaMover;
@@ -18,10 +18,23 @@ public class RaycastMove : MonoBehaviour
     [SerializeField] int columnLength,rowLength;
     
     private Camera _cam;
+    private static Transform _pizza;
+    
+    [InitializeOnLoadMethod]
+    static void FindPizza()
+    {
+        _pizza = GameObject.Find("Pizza").transform;
+        Debug.Log(_pizza.gameObject);
+    }
+    
     void Start()
     {
+        if (!_pizza)
+        {
+            _pizza = GameObject.Find("Pizza").transform;
+        }
         _cam = Camera.main;
-        _pizzaMover = pizza.GetComponent<Mover>();
+        _pizzaMover = _pizza.GetComponent<Mover>();
     }
 
     void Update()
@@ -35,9 +48,9 @@ public class RaycastMove : MonoBehaviour
 
         if (!Physics.Raycast(cameraRay.origin, cameraRay.direction, out hit, ignoreLayers)) { return; }
         
-            pizza.position = new Vector3(
+            _pizza.position = new Vector3(
                 FindClosestTarget(hit.point,"GridObject").transform.position.x,
-                pizza.position.y,
+                _pizza.position.y,
                 FindClosestTarget(hit.point,"GridObject").transform.position.z);
         
       
