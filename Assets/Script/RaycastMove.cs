@@ -56,7 +56,7 @@ public class RaycastMove : MonoBehaviour
         if (!Physics.Raycast(cameraRay.origin, cameraRay.direction, out hit, ignoreLayers)) { return; }
         
             Vector3 newPos = FindClosestTarget(hit.point,"GridObject").transform.position;
-            _pizza.parent.position = new Vector3(newPos.x, _pizza.position.y, newPos.z);
+            _pizza.parent.position = new Vector3(newPos.x, _pizza.parent.position.y, newPos.z);
             
             Vector3 center = Vector3.Lerp(_gridPos[0].position,_gridPos[4].position,0.5f);
             
