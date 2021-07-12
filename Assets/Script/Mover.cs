@@ -25,7 +25,7 @@ public class Mover : MonoBehaviour
         gotHit = false;
     }
 
-    void Update()
+    void FixedUpdate()
     {
 
         if (gotHit)
