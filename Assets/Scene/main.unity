@@ -41274,6 +41274,10 @@ PrefabInstance:
       propertyPath: m_ScaleInLightmap
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 23591872636673134, guid: d9eb8b9e3c7ece147af52ee41778d3b7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e47368b75d31f8340890f609d23424b6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9eb8b9e3c7ece147af52ee41778d3b7, type: 3}
 --- !u!1001 &706740292
@@ -54031,15 +54035,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4812218492159442, guid: dbe5a4d7681a45142a56df00ba9fbde3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.302567
+      value: 50.5
       objectReference: {fileID: 0}
     - target: {fileID: 4812218492159442, guid: dbe5a4d7681a45142a56df00ba9fbde3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 161.91641
+      value: 221.2
       objectReference: {fileID: 0}
     - target: {fileID: 4812218492159442, guid: dbe5a4d7681a45142a56df00ba9fbde3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -108.847534
+      value: -55.2
       objectReference: {fileID: 0}
     - target: {fileID: 4812218492159442, guid: dbe5a4d7681a45142a56df00ba9fbde3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -75032,7 +75036,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh744152
+  m_Name: pb_Mesh41396
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
