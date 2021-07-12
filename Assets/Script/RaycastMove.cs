@@ -29,7 +29,16 @@ public class RaycastMove : MonoBehaviour
     [InitializeOnLoadMethod]
     static void FindPizza()
     {
-        _pizza = GameObject.Find("Pizza").transform;
+        try
+        {
+            _pizza = GameObject.Find("Pizza").transform;
+        }
+        catch (Exception e)
+        {
+            
+            throw;
+        }
+       
     }
     
     void Start()
