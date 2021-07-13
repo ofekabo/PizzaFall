@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_S_Obstacle 3
+  m_Name: Shader Graphs_S_Obstacle 4
   m_Shader: {fileID: -6465566751694194690, guid: d4cbd2433325b15478a05705721e5d43, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -28,16 +28,16 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_15535959: 9.3
-    - Vector1_2359F18C: 1.04
+    - Vector1_15535959: 22.4
+    - Vector1_2359F18C: 5
     - Vector1_5BEE7366: 0
     - Vector1_8AFD92F6: 1
     - Vector1_B7BF7BA: 1.4
     - Vector1_BA1022D0: 0.1
     - Vector1_E77CA164: 0.5
     m_Colors:
-    - Color_5C291D53: {r: 0.19855851, g: 0.20572692, b: 0.2094249, a: 0}
-    - Color_83644EF6: {r: 0.0065857987, g: 0.029116161, b: 0.06031205, a: 0}
+    - Color_5C291D53: {r: 0.0009765625, g: 0.000792739, b: 0, a: 0}
+    - Color_83644EF6: {r: 0.43527526, g: 0.023897465, b: 0, a: 0}
     - Vector2_BBF2E1F7: {r: 0, g: 0, b: 0, a: 0}
-    - Vector2_D00FC7F2: {r: 0, g: 0.05, b: 0, a: 0}
+    - Vector2_D00FC7F2: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
