@@ -41,9 +41,9 @@ public class Mover : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.collider.CompareTag("Obstacle"))
-        {
+        // if (other.collider.CompareTag("Obstacle"))
+        // {
             gotHit = true;
-        }
+        // }
     }
 }
