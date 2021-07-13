@@ -10,6 +10,7 @@ public class Mover : MonoBehaviour
     [SerializeField] float speed;
     private Rigidbody _rb;
     [HideInInspector] public bool gotHit;
+    private Outline _outline;
 
     [InitializeOnLoadMethod]
     private void CompEditor()
@@ -17,12 +18,15 @@ public class Mover : MonoBehaviour
         _rb = GetComponent<Rigidbody>();
         _rb.useGravity = false;
         gotHit = false;
+        _outline = GetComponent<Outline>();
+
     }
     private void Start()
     {
         _rb = GetComponent<Rigidbody>();
         _rb.useGravity = false;
         gotHit = false;
+        _outline = GetComponent<Outline>();
     }
 
     void FixedUpdate()
@@ -44,6 +48,8 @@ public class Mover : MonoBehaviour
         // if (other.collider.CompareTag("Obstacle"))
         // {
             gotHit = true;
-        // }
+            _outline.enabled = false;
+            // }
+
     }
 }

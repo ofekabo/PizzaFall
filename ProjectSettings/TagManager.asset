@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GridObject
   - Obstacle
+  - PizzaBox
   layers:
   - Default
   - TransparentFX

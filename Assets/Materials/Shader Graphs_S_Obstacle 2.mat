@@ -36,8 +36,8 @@ Material:
     - Vector1_BA1022D0: 0.0227
     - Vector1_E77CA164: 0.5
     m_Colors:
-    - Color_5C291D53: {r: 1, g: 0.8110698, b: 0, a: 0}
-    - Color_83644EF6: {r: 1, g: 0.05524422, b: 0, a: 0}
+    - Color_5C291D53: {r: 0.29584742, g: 0, b: 1, a: 0}
+    - Color_83644EF6: {r: 0.0843256, g: 0, b: 0.8113208, a: 0}
     - Vector2_BBF2E1F7: {r: 0, g: 0, b: 0, a: 0}
-    - Vector2_D00FC7F2: {r: 0, g: 2, b: 0, a: 0}
+    - Vector2_D00FC7F2: {r: 0, g: 0.1, b: 0, a: 0}
   m_BuildTextureStacks: []
