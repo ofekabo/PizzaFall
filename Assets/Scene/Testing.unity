@@ -1265,16 +1265,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: a6e40de15a43dc34da517d27c89ffb3e, type: 3}
       propertyPath: m_Materials.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: a6e40de15a43dc34da517d27c89ffb3e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: -6947222541107494735, guid: bd7f5f82d2d29b2429950b3fe98ce937, type: 3}
+      objectReference: {fileID: 2100000, guid: 7e4139b833198144fbfb92781caac4c5, type: 2}
     - target: {fileID: -7511558181221131132, guid: a6e40de15a43dc34da517d27c89ffb3e, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: d6bfc8722de73774394256f249da0402, type: 2}
+      objectReference: {fileID: 2100000, guid: 7e4139b833198144fbfb92781caac4c5, type: 2}
     - target: {fileID: 919132149155446097, guid: a6e40de15a43dc34da517d27c89ffb3e, type: 3}
       propertyPath: m_Name
       value: _eperoni
