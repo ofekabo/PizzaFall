@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Sasuge
+  m_Name: M_mushroom1 1
   m_Shader: {fileID: -6465566751694194690, guid: 868fff3ca48a7b2408f37944a4c5f1c3, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
@@ -24,17 +24,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-<<<<<<< Updated upstream
-    - Vector1_212EF132: 5.3
-    - Vector1_EE041D5B: 8.32
+    - Vector1_212EF132: 8.92
+    - Vector1_EE041D5B: 5.17
     m_Colors:
-    - Color_20FE2629: {r: 1, g: 0.8703303, b: 0.0603773, a: 0}
-    - _Albedo: {r: 1, g: 0.57882214, b: 0.02352941, a: 0}
-=======
-    - Vector1_212EF132: 2.35
-    - Vector1_EE041D5B: 3.22
-    m_Colors:
-    - Color_20FE2629: {r: 0.8584906, g: 0.73159456, b: 0.17412782, a: 0}
-    - _Albedo: {r: 0.9622642, g: 0.11347453, b: 0.11347453, a: 0}
->>>>>>> Stashed changes
+    - Color_20FE2629: {r: 1, g: 1, b: 1, a: 0}
+    - _Albedo: {r: 0.5372549, g: 0.46666667, b: 0.4, a: 0}
   m_BuildTextureStacks: []
