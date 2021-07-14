@@ -1,14 +1,14 @@
 ﻿using System;
+using System.Linq;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine;
 
 public class RaycastMove : MonoBehaviour
 {
-    [SerializeField] private float movementLerpSpeed = 3f;
     [SerializeField] LayerMask ignoreLayers = new LayerMask();
     
     private Mover _pizzaMover;
@@ -65,8 +65,9 @@ public class RaycastMove : MonoBehaviour
         if (!Physics.Raycast(cameraRay.origin, cameraRay.direction, out hit, ignoreLayers)) { return; }
         
             Vector3 newPos = FindClosestTarget(hit.point,"GridObject").transform.position;
-            _pizza.parent.position = Vector3.Lerp(_pizza.position,
-                new Vector3(newPos.x, _pizza.parent.position.y, newPos.z), Time.deltaTime * movementLerpSpeed);
+            // LeanTween.move(_pizza.parent.gameObject, new Vector3(newPos.x, _pizza.parent.position.y, newPos.z)1f);
+
+            _pizza.parent.position = new Vector3(newPos.x, _pizza.parent.position.y, newPos.z);
             
             Vector3 center = Vector3.Lerp(_gridPos[0].position,_gridPos[4].position,0.5f);
             

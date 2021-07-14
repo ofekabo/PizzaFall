@@ -20,12 +20,18 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 927b70549694f004987b2e755e63424b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Triplanar_C3C7246A_Texture_1:
         m_Texture: {fileID: 2800000, guid: 6169eac876d77544c822e8b433ade6cb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_234102A5: 0
-    - Vector1_5B9E905: 0
-    - Vector1_E21F29D3: 0
-    m_Colors: []
+    - Vector1_234102A5: 1
+    - Vector1_5B9E905: 0.5
+    - Vector1_E21F29D3: 0.5
+    m_Colors:
+    - Vector2_596724CA: {r: 2, g: 3, b: 0, a: 0}
+    - Vector2_C2742C2D: {r: 3, g: 4.01, b: 0, a: 0}
   m_BuildTextureStacks: []
