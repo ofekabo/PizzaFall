@@ -80,6 +80,7 @@ MonoBehaviour:
   - {fileID: -5328078860678070168}
   - {fileID: 8378982191668026601}
   - {fileID: -2291688522072271969}
+  - {fileID: 7475734624340718120}
 --- !u!114 &7475734624340718120
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -95,9 +96,9 @@ MonoBehaviour:
   active: 1
   m_AdvancedMode: 0
   master:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 2
+      <length>k__BackingField: 4
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
@@ -109,6 +110,24 @@ MonoBehaviour:
           value: 0
           inSlope: 1
           outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.21022727
+          value: 0.24941725
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.8863636
+          value: 0.9533799
+          inSlope: 0.91992015
+          outSlope: 0.91992015
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
@@ -128,7 +147,7 @@ MonoBehaviour:
   red:
     m_OverrideState: 0
     m_Value:
-      <length>k__BackingField: 2
+      <length>k__BackingField: 3
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
@@ -138,6 +157,15 @@ MonoBehaviour:
         - serializedVersion: 3
           time: 0
           value: 0
+          inSlope: 1
+          outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.225
+          value: 0.24242425
           inSlope: 1
           outSlope: 1
           tangentMode: 0
@@ -234,13 +262,31 @@ MonoBehaviour:
   hueVsSat:
     m_OverrideState: 0
     m_Value:
-      <length>k__BackingField: 0
+      <length>k__BackingField: 2
       m_Loop: 1
       m_ZeroValue: 0.5
       m_Range: 1
       m_Curve:
         serializedVersion: 2
-        m_Curve: []
+        m_Curve:
+        - serializedVersion: 3
+          time: 0.24545455
+          value: 0.45920748
+          inSlope: -0.41025618
+          outSlope: -0.41025618
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.62045455
+          value: 0.5314685
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
@@ -286,7 +332,7 @@ MonoBehaviour:
   m_AdvancedMode: 0
   postExposure:
     m_OverrideState: 1
-    m_Value: 0.35
+    m_Value: 0.32
   contrast:
     m_OverrideState: 1
     m_Value: 2.5
