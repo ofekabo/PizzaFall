@@ -12,8 +12,11 @@ public class PizzaTriggerHandler : MonoBehaviour
     private Material m;
     private void Start()
     {
-        m = GetComponent<Renderer>().sharedMaterial;
+        m = GetComponent<Renderer>().material;
+        
         emissionStrength = 0;
+        
+        m.SetColor("_EmissionColor",m.GetColor("_BaseColor") * emissionStrength);
     }
 
     private void Update()
@@ -39,6 +42,5 @@ public class PizzaTriggerHandler : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         StartCoroutine(FlashCoro());
-
     }
 }

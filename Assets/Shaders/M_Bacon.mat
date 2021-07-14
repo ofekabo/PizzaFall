@@ -24,9 +24,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_212EF132: 8.92
+    - Vector1_212EF132: 7.5
     - Vector1_EE041D5B: 5.17
     m_Colors:
-    - Color_20FE2629: {r: 1, g: 1, b: 1, a: 0}
-    - _Albedo: {r: 0.5372549, g: 0.46666667, b: 0.4, a: 0}
+    - Color_20FE2629: {r: 1, g: 0.7385871, b: 0, a: 0}
+    - _Albedo: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
