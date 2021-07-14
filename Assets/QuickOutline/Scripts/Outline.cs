@@ -13,6 +13,7 @@ using UnityEngine;
 
 [DisallowMultipleComponent]
 
+[ExecuteInEditMode]
 public class Outline : MonoBehaviour {
   private static HashSet<Mesh> registeredMeshes = new HashSet<Mesh>();
 
@@ -61,6 +62,9 @@ public class Outline : MonoBehaviour {
 
   [SerializeField, Range(0f, 10f)]
   private float outlineWidth = 2f;
+
+  [SerializeField, Range(1, 10f)]
+  private float emissionStrength;
 
   [Header("Optional")]
 
@@ -240,7 +244,7 @@ public class Outline : MonoBehaviour {
   void UpdateMaterialProperties() {
 
     // Apply properties according to mode
-    outlineFillMaterial.SetColor("_OutlineColor", outlineColor);
+    outlineFillMaterial.SetColor("_OutlineColor", outlineColor * emissionStrength);
 
     switch (outlineMode) {
       case Mode.OutlineAll:
