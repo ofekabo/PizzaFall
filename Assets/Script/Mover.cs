@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEditor;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ using UnityEngine;
 public class Mover : MonoBehaviour
 {
     [SerializeField] float speed;
+    [SerializeField] private ParticleSystem _pps;
+    
     private Rigidbody _rb;
     [HideInInspector] public bool gotHit;
     private Outline _outline;
@@ -48,6 +51,7 @@ public class Mover : MonoBehaviour
         // if (other.collider.CompareTag("Obstacle"))
         // {
             gotHit = true;
+            Instantiate(_pps,transform.position,_pps.transform.rotation);
             _outline.enabled = false;
             // }
 
