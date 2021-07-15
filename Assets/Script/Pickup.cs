@@ -15,8 +15,8 @@ public class Pickup : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // pizzaMaterial.SetTexture("_MainTex",_texture);
-        other.transform.GetChild(0).GetComponent<Renderer>().material.mainTexture = _texture;
+        other.GetComponent<Renderer>().material.mainTexture = _texture;
         Instantiate(ppSystem, transform.position,quaternion.identity);
-        Destroy(gameObject);
+        Destroy(gameObject,0.1f);
     }
 }
