@@ -10,7 +10,7 @@ using UnityEngine;
 public class RaycastMove : MonoBehaviour
 {
     [SerializeField] LayerMask ignoreLayers = new LayerMask();
-    
+    [SerializeField] float lerpSpeed;
     private Mover _pizzaMover;
     // debugging
     [Header("Debug")]
@@ -26,6 +26,9 @@ public class RaycastMove : MonoBehaviour
     private static Transform _pizza;
     [HideInInspector]public Transform p;
     
+    private float _currentTime;
+    private bool _clicked;
+    
     [InitializeOnLoadMethod]
     static void FindPizza()
     {
@@ -40,6 +43,7 @@ public class RaycastMove : MonoBehaviour
         }
        
     }
+    #region OldMovement
     
     void Start()
     {
@@ -51,40 +55,67 @@ public class RaycastMove : MonoBehaviour
         _pizzaMover = _pizza.GetComponent<Mover>();
     }
 
+
+
+    
+
+
     void Update()
     {
-      
-       
+
+        if (_clicked)
+        {
+            if(_currentTime < lerpSpeed)
+                _currentTime += (Time.deltaTime * lerpSpeed);
+            else { _clicked = false; }
+        }
         Ray cameraRay = _cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         Debug.DrawRay(cameraRay.origin,cameraRay.direction * 15.0f,Color.red);
         
         if(_pizzaMover.gotHit) { return; }
         if(!Input.GetMouseButtonDown(0)) { return; }
-
+            _currentTime = 0;
         if (!Physics.Raycast(cameraRay.origin, cameraRay.direction, out hit, ignoreLayers)) { return; }
-        
+          
+            _clicked = true;
             Vector3 newPos = FindClosestTarget(hit.point,"GridObject").transform.position;
-            // LeanTween.move(_pizza.parent.gameObject, new Vector3(newPos.x, _pizza.parent.position.y, newPos.z)1f);
-
-            _pizza.parent.position = new Vector3(newPos.x, _pizza.parent.position.y, newPos.z);
+            // _pizza.parent.position = new Vector3(newPos.x, _pizza.parent.position.y, newPos.z);
+           
+            
             
             Vector3 center = Vector3.Lerp(_gridPos[0].position,_gridPos[4].position,0.5f);
             
-            var lookPos = center - _pizza.parent.position;
-            lookPos.y = 0;
-          
-            var rotation = Quaternion.LookRotation(lookPos);
-            _pizza.parent.rotation = rotation;
-            _pizza.parent.Rotate(0,90,0);
-         
-            Debug.DrawLine(_pizza.position,new Vector3(center.x,_pizza.parent.transform.position.y,center.z),Color.blue,1f);
         
+            
+       
+            
+          
+            // _pizza.parent.rotation = rotation;
+            
+            StartCoroutine(PlayMovement(newPos,center));
+            Debug.DrawLine(_pizza.position,new Vector3(center.x,_pizza.parent.transform.position.y,center.z),Color.blue,1.0f);
+
       
     }
-    
-    
-    
+    int i = 0;
+    IEnumerator PlayMovement(Vector3 newPos,Vector3 center)
+    {
+        while (_clicked)
+        {
+            var lookPos = center - _pizza.parent.position;
+            lookPos.y = 0;
+            var rotation = Quaternion.LookRotation(lookPos);
+            var rotAngles = rotation.eulerAngles;
+            _pizza.parent.position = Vector3.Lerp(_pizza.parent.position,new Vector3(newPos.x, _pizza.parent.position.y, newPos.z),_currentTime);
+            _pizza.parent.rotation = Quaternion.Lerp(_pizza.parent.rotation,Quaternion.Euler(rotAngles.x,rotAngles.y + 90,rotAngles.z), _currentTime);
+            yield return new WaitForSeconds(0.02f);
+        }
+      
+    }
+
+
+
     GameObject FindClosestTarget(Vector3 point,string target)
     {
         Vector3 pos = point;
@@ -92,7 +123,9 @@ public class RaycastMove : MonoBehaviour
             .OrderBy(o => (o.transform.position - pos).sqrMagnitude)
             .FirstOrDefault();
     }
+    #endregion
     
+
     private void OnDrawGizmos()
     {
         if(!showDebug) { return; }

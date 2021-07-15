@@ -32,19 +32,24 @@ public class Mover : MonoBehaviour
         _outline = GetComponent<Outline>();
     }
 
-    void FixedUpdate()
+    private void Update()
     {
-
-        if (gotHit)
-        {
-            _rb.useGravity = true;
-            // float maxVelY = Mathf.Clamp(_rb.velocity.y,-15,2);
-            // _rb.velocity = new Vector3(_rb.velocity.x,maxVelY,_rb.velocity.z);
-            return;
-        }
-        _rb.MovePosition(transform.position + Vector3.down * Time.deltaTime * speed);
-        
+        transform.Translate(Vector3.down * speed * Time.deltaTime,Space.World);
     }
+
+    // void FixedUpdate()
+    // {
+    //
+    //     if (gotHit)
+    //     {
+    //         _rb.useGravity = true;
+    //         // float maxVelY = Mathf.Clamp(_rb.velocity.y,-15,2);
+    //         // _rb.velocity = new Vector3(_rb.velocity.x,maxVelY,_rb.velocity.z);
+    //         return;
+    //     }
+    //     _rb.MovePosition(transform.position + Vector3.down * Time.deltaTime * speed);
+    //     
+    // }
 
     private void OnCollisionEnter(Collision other)
     {
