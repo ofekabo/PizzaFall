@@ -10,6 +10,6 @@ public class TriggerPps : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(pps, transform.position, quaternion.identity);
+        Instantiate(pps, transform.position, pps.transform.rotation);
     }
 }
