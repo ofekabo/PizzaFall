@@ -65,7 +65,7 @@ public class RaycastMove : MonoBehaviour
 
         if (_clicked)
         {
-            if(_currentTime < lerpSpeed)
+            if(_currentTime < 1)
                 _currentTime += (Time.deltaTime * lerpSpeed);
             else { _clicked = false; }
         }
