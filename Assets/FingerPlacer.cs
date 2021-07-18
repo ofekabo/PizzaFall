@@ -1,28 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class FingerPlacer : MonoBehaviour
 {
     [SerializeField] Transform finger;
-    [SerializeField] GameObject clickIndicator;
     [SerializeField]  Vector2 fingerOffset;
+    [SerializeField] TextMeshProUGUI text;
     // Start is called before the first frame update
     void Start()
     {
-        clickIndicator.SetActive(false);
         
+        StartCoroutine(DisableText());
+        StartCoroutine(DisableFinger());
     }
 
     // Update is called once per frame
     void Update()
     {
         finger.position = GetScreenPos();
-        if (Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(FlashIndicator());
-        }
-        
     }
 
     Vector2 GetScreenPos()
@@ -31,10 +28,15 @@ public class FingerPlacer : MonoBehaviour
         return new Vector2(posn.x,posn.y) + fingerOffset;
     }
 
-    IEnumerator FlashIndicator()
+    IEnumerator DisableText()
     {
-        clickIndicator.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        clickIndicator.SetActive(false);
+        yield return new WaitForSeconds(5);
+        text.enabled = false;
+    }
+    
+    IEnumerator DisableFinger()
+    {
+        yield return new WaitForSeconds(25);
+        finger.gameObject.SetActive(false);
     }
 }
