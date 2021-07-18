@@ -109,7 +109,8 @@ public class RaycastMove : MonoBehaviour
             var rotAngles = rotation.eulerAngles;
             _pizza.parent.position = Vector3.Lerp(_pizza.parent.position,new Vector3(newPos.x, _pizza.parent.position.y, newPos.z),_currentTime);
             _pizza.parent.rotation = Quaternion.Lerp(_pizza.parent.rotation,Quaternion.Euler(rotAngles.x,rotAngles.y + 90,rotAngles.z), _currentTime);
-            yield return new WaitForSeconds(0.02f);
+            yield return new WaitForSeconds(0.01f);
+            _pizza.parent.rotation = Quaternion.Lerp(_pizza.parent.rotation,Quaternion.Euler(rotAngles.x,rotAngles.y + 90,rotAngles.z), _currentTime);
         }
       
     }
