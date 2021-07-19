@@ -6,8 +6,11 @@ using UnityEngine;
 public class FingerPlacer : MonoBehaviour
 {
     [SerializeField] Transform finger;
-    [SerializeField]  Vector2 fingerOffset;
+    [SerializeField]  Vector3 fingerOffset;
     [SerializeField] TextMeshProUGUI text;
+    [SerializeField] private Transform pizza;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +22,14 @@ public class FingerPlacer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        finger.position = GetScreenPos();
+        // finger.position = Camera.main.WorldToViewportPoint(pizza.position + fingerOffset);
     }
 
-    Vector2 GetScreenPos()
-    {
-        Vector3 posn = Input.mousePosition;
-        return new Vector2(posn.x,posn.y) + fingerOffset;
-    }
+    // Vector2 GetScreenPos()
+    // {
+    //     Vector3 posn = Input.mousePosition;
+    //     return new Vector2(posn.x,posn.y) + fingerOffset;
+    // }
 
     IEnumerator DisableText()
     {
