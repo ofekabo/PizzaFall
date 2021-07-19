@@ -163,7 +163,7 @@ public class RaycastMove : MonoBehaviour
         p = parent.transform;
         int nameNumb = 1;
         
-  
+    
         
         for (int i = 0; i < amount; i++)
         {

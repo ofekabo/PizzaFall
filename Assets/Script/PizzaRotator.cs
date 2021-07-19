@@ -23,7 +23,7 @@ public class PizzaRotator : MonoBehaviour
         Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.down);
 
         // Quaternion targetRotation = Quaternion.Euler(90,angle,0);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation , Time.deltaTime * 3);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation , Time.deltaTime * 8);
         // transform.rotation = Quaternion.Euler(90, transform.rotation.y, transform.rotation.z);
     }
 
