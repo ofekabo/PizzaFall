@@ -5,11 +5,12 @@ using UnityEngine;
 public class CameraMover : MonoBehaviour
 {
     [SerializeField] private Transform pizza;
-    [SerializeField] private float _distanceToPizza;
+    public float _distanceToPizza;
 
 
     void Update()
     {
-        transform.position = new Vector3(transform.position.x,pizza.position.y+_distanceToPizza,transform.position.z);
+        transform.position =
+            new Vector3(transform.position.x, pizza.position.y + _distanceToPizza, transform.position.z);
     }
 }

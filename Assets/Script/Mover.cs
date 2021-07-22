@@ -58,12 +58,12 @@ public class Mover : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision other)
+    {
+        if (other.collider.CompareTag("Obstacle"))
         {
-            // if (other.collider.CompareTag("Obstacle"))
-            // {
             gotHit = true;
             Instantiate(_pps, transform.position, _pps.transform.rotation);
             _outline.enabled = false;
-            // }
         }
     }
+}
