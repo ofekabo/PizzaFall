@@ -9,11 +9,15 @@ public class DestructiblePlatform : MonoBehaviour
     [SerializeField] private bool Left;
     [SerializeField] private bool Right;
     [SerializeField] private float power;
+    [SerializeField] float dissolveTime;
+    
+    private Material _m;
 
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _m = GetComponent<Renderer>().material;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +29,11 @@ public class DestructiblePlatform : MonoBehaviour
                 _rigidbody.AddForce(Vector3.left * power + Vector3.down, ForceMode.Impulse);
             if (Right)
                 _rigidbody.AddForce(Vector3.right * power+ Vector3.down, ForceMode.Impulse);
+            
+            LeanTween.value(_m.GetFloat("_DissAmount"),1,dissolveTime).setOnUpdate(value =>
+            {
+               _m.SetFloat("_DissAmount",value); 
+            });
         }
     }
 }
