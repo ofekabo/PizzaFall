@@ -22,7 +22,7 @@ public class chili : MonoBehaviour
     {
         fire.SetActive(true);
         _volumeProfile.profile = fireVolume;
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         fire.SetActive(false);
         _volumeProfile.profile = normalVolume;
     }
