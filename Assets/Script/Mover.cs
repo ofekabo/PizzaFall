@@ -15,7 +15,7 @@ public class Mover : MonoBehaviour
     [HideInInspector] public bool gotHit;
     private Outline _outline;
 
-    [InitializeOnLoadMethod]
+    //[InitializeOnLoadMethod]
     private void CompEditor()
     {
         _rb = GetComponent<Rigidbody>();

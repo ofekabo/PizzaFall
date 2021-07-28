@@ -29,7 +29,7 @@ public class RaycastMove : MonoBehaviour
     private float _currentTime;
     private bool _clicked;
     
-    [InitializeOnLoadMethod]
+    //[InitializeOnLoadMethod]
     static void FindPizza()
     {
         try
